@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDEVCore.Security", "src\OpenDEVCore.Security.csproj", "{998CB56D-1749-49DE-AE3C-1654F055A346}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2633BD02-81E7-4034-AFCC-E7251F718987}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{998CB56D-1749-49DE-AE3C-1654F055A346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998CB56D-1749-49DE-AE3C-1654F055A346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998CB56D-1749-49DE-AE3C-1654F055A346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998CB56D-1749-49DE-AE3C-1654F055A346}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{998CB56D-1749-49DE-AE3C-1654F055A346} = {2633BD02-81E7-4034-AFCC-E7251F718987}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2714856B-43A5-44FB-9DE0-0C44DA95431D}
+	EndGlobalSection
+EndGlobal

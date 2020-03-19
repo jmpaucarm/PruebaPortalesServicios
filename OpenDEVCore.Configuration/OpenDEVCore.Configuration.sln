@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BC8B5774-2088-4290-98C6-3D19F2B86AEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDEVCore.Configuration", "src\OpenDEVCore.Configuration.csproj", "{6A1A32F8-59BB-4012-88AB-1B40D068BEB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A1A32F8-59BB-4012-88AB-1B40D068BEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1A32F8-59BB-4012-88AB-1B40D068BEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1A32F8-59BB-4012-88AB-1B40D068BEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1A32F8-59BB-4012-88AB-1B40D068BEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A1A32F8-59BB-4012-88AB-1B40D068BEB0} = {BC8B5774-2088-4290-98C6-3D19F2B86AEB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2714856B-43A5-44FB-9DE0-0C44DA95431D}
+	EndGlobalSection
+EndGlobal

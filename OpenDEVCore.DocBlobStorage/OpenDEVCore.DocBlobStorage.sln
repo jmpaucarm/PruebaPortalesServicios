@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDEVCore.DocBlobStorage", "src\OpenDEVCore.DocBlobStorage.csproj", "{B9755897-472D-4EEE-9996-3E4577695354}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9755897-472D-4EEE-9996-3E4577695354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9755897-472D-4EEE-9996-3E4577695354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9755897-472D-4EEE-9996-3E4577695354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9755897-472D-4EEE-9996-3E4577695354}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D0AEF7D-3394-4734-B896-817EAF043A92}
+	EndGlobalSection
+EndGlobal

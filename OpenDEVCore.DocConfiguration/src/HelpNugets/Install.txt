@@ -1,0 +1,4 @@
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+Scaffold-DbContext "Server=PORVMDEV00;Database=AppBancaMovil;Trusted_Connection=false;User ID=BankPlus_SERQA;Password=S3rv3rQA85B+" Microsoft.EntityFrameworkCore.SqlServer
