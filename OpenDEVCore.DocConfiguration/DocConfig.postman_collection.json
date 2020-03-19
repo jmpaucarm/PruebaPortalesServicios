@@ -1,0 +1,1004 @@
+{
+	"info": {
+		"_postman_id": "18da467f-94ad-4074-923b-36f61dd0a359",
+		"name": "DocConfig",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TypeDocument",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/GetAll?institution=BDA&isActive=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"GetAll"
+							],
+							"query": [
+								{
+									"key": "institution",
+									"value": "BDA"
+								},
+								{
+									"key": "isActive",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n            \"code\": \"CEDULA3\",\n            \"institution\": \"BDA\",\n            \"description\": \"IMAGEN CEDULA CLIENTE\",\n            \"prefijo\": \"CED\",\n            \"isDigitizable\": false,\n            \"IsCentrilizedOnline\":1,\n            \"idTypeImage\": 0,\n            \"type\": \"JPEG\",\n            \"path\": \"\",\n            \"blodStorage\": \"SHAREPOINT\", \n            \"profile\": \"NULL\",\n            \"timeLive\": 12,\n            \"isVirtual\": false,\n            \"isActive\": true,\n            \"isForm\": false,\n            \"isScanLote\":false,\n            \"orientation\":\"vertical\",\n            \"valuedDocument\":false,\n            \"copyNumber\":1,\n            \"Reprintable\":true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 2,\n            \"creationOfficeId\": 2,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 2,\n            \"updateOfficeId\": 2,\n            \"TypeDctoField\":[\n            \t{\"IdTypeDctoField\":0,\"IdField\":1,\"IdTypeDocument\":0,\"IsActive\":1,\"IsObligatory\":1,\"CodeField\":\"DNI\",\"Order\":1},\n            \t{\"IdTypeDctoField\":0,\"IdField\":5,\"IdTypeDocument\":0,\"IsActive\":1,\"IsObligatory\":1,\"CodeField\":\"FormCode\",\"Order\":2}\n            \t]\n           \n        }"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/getbycode?code=solcredi&institution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"getbycode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "solcredi"
+								},
+								{
+									"key": "institution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/find?code=DNI&insttitution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"find"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "DNI"
+								},
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindByCodes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"SOLCRECONS\"]"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/findbycodes?insttitution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"findbycodes"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\n\t\t\t\"idTypeDocument\": 3,\n            \"code\": \"BCOANTIGUA2\",\n            \"institution\": \"Editado2\",\n            \"description\": \"Editado2\",\n            \"prefijo\": \"Editado2\",\n            \"isDigitizable\": false,\n            \"idTypeImage\": 0,\n            \"type\": \"PDF\",\n            \"path\": \"CRED/1722222222\",\n            \"blodStorage\": \"DATABASE2\",\n            \"profile\": \"NULL\",\n            \"timeLive\": 12,\n            \"isVirtual\": false,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 2,\n            \"creationOfficeId\": 2,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 2,\n            \"updateOfficeId\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetConfigurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/getconfigurations?institution=BDA&codes[0]=DNI&codes[1]=SOLCRECONS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"getconfigurations"
+							],
+							"query": [
+								{
+									"key": "institution",
+									"value": "BDA"
+								},
+								{
+									"key": "codes[0]",
+									"value": "DNI"
+								},
+								{
+									"key": "codes[1]",
+									"value": "SOLCRECONS"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Field",
+			"item": [
+				{
+					"name": "GetAllField",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/Field/getall?insttitution=BDA&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"Field",
+								"getall"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddField",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n  \t\t\t\n            \"code\": \"COMPRLIQ\",\n            \"institution\": \"BDA\",\n            \"description\": \"COMPRLIQ\",\n            \"type\": \"COMPRLIQ\",\n            \"lenght\": 10,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1\n            \n        }"
+						},
+						"url": {
+							"raw": "http://localhost:5020/Field/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"Field",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCodeField",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/Field/getbycode?code=DNI&insttitution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"Field",
+								"getbycode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "DNI"
+								},
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindField",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/Field/find?code=prueba1&insttitution=PRU1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"Field",
+								"find"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "prueba1"
+								},
+								{
+									"key": "insttitution",
+									"value": "PRU1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindByCodesField",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"DNI\"]"
+						},
+						"url": {
+							"raw": "http://localhost:5020/Field/findbycodes?insttitution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"Field",
+								"findbycodes"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditField",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\n\t\t\t\"IdField\":1,\n\t\t\t\"code\": \"prueba1\",\n            \"institution\": \"PRU1\",\n            \"description\": \"Editado\",\n            \"type\": \"PRUEBA1\",\n            \"lenght\": 10,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5020/Field/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"Field",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeFolder",
+			"item": [
+				{
+					"name": "EditTypeFolder",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\n\t\t\t\"IdField\":1,\n\t\t\t\"code\": \"prueba1\",\n            \"institution\": \"PRU1\",\n            \"description\": \"Editado\",\n            \"type\": \"PRUEBA1\",\n            \"lenght\": 10,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeFolder/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeFolder",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindByTypeFolder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"prueba1\"]"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeFolder/findbycodes?insttitution=PRU1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeFolder",
+								"findbycodes"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "PRU1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindTypeFolder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeFolder/find?code=SOLCRECONS&insttitution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeFolder",
+								"find"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "SOLCRECONS"
+								},
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCodeTypeFolder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeFolder/getbycode?code=SOLCRECONS&insttitution=BDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeFolder",
+								"getbycode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "SOLCRECONS"
+								},
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTypeFolder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"institution\": \"BDA\",\n    \"code\": \"PRUEBADocument3\",\n    \"description\": \"PRUEBACC\",\n    \"type\": \"SOLCRDMIC\",\n    \"isActive\": true,\n    \"typeDctoFolder\": [\n        {\n            \"idTypeDocument\": 1,\n            \"isActive\": true,\n            \"individualSend\": true,\n            \"order\": 1\n        }\n    ],\n    \"typeFolderField\": [\n        {\n            \"idField\": 1,\n            \"isActive\": true,\n            \"isObligatory\": true,\n            \"codeField\": \"DNI\",\n            \"order\": 1\n        },\n          {\n            \"idField\": 1,\n            \"isActive\": true,\n            \"isObligatory\": true,\n            \"codeField\": \"DNI\",\n            \"order\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeFolder/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeFolder",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllTypeFolder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeFolder/getall?insttitution=BDA&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeFolder",
+								"getall"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "BDA"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeBox",
+			"item": [
+				{
+					"name": "GetAllTypeBox",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeBox/getall?insttitution=BCOSOLIDARIO&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeBox",
+								"getall"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "BCOSOLIDARIO"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTypeBox",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n            \"code\": \"PruebaPost11\",\n  \t\t\t\"institution\": \"BDA\",\n            \"description\": \"PruebaPost\",\n            \"type\": \"CRDPAG\",\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1,\n            \"typeBoxField\":[\n            \t{\"idtypeBoxField\":0,\"IdTypeBox\":0,\"idField\":10,\"isActive\":1,\"isObligatory\":false,\"order\":1}\n            \t]\n            \n        }"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeBox/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeBox",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCodeTypeBox",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeBox/getbycode?code=CAJASOLCRE&insttitution=BCOSOLIDARIO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeBox",
+								"getbycode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "CAJASOLCRE"
+								},
+								{
+									"key": "insttitution",
+									"value": "BCOSOLIDARIO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindTypeBox",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeBox/find?code=prueba1&insttitution=PRU1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeBox",
+								"find"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "prueba1"
+								},
+								{
+									"key": "insttitution",
+									"value": "PRU1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditTypeBox",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\n\t\t\t\"IdTypeBox\":1,\n\t\t\t\"code\": \"prueba1\",\n            \"institution\": \"PRU1\",\n            \"description\": \"Editado\",\n            \"type\": \"PRUEBA1\",\n            \"lenght\": 10,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeBox/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeBox",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5008/TypeBox/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5020/TypeBox/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeBox",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeImage",
+			"item": [
+				{
+					"name": "GetAllTypeImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/TypeImage/getall?insttitution=Editado1&active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"TypeImage",
+								"getall"
+							],
+							"query": [
+								{
+									"key": "insttitution",
+									"value": "Editado1"
+								},
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTypeImage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n            \"code\": \"prueba2\",\n  \t\t\t\"institution\": \"PRU1\",\n            \"description\": \"FIELD DE PRUEBA1\",\n            \"IsDuplex\": 1,\n            \"MultiPages\": 1,\n            \"VariablesPages\": 1,\n            \"NumberPages\": 1,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1\n            \n        }"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeImage/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeImage",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCodeTypeImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/TypeImage/getbycode?code=prueba1&insttitution=PRU1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"TypeImage",
+								"getbycode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "prueba1"
+								},
+								{
+									"key": "insttitution",
+									"value": "PRU1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindTypeImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5008/TypeImage/find?code=prueba1&insttitution=PRU1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"TypeImage",
+								"find"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "prueba1"
+								},
+								{
+									"key": "insttitution",
+									"value": "PRU1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditTypeImage",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n  \t\t\t\"IdTypeImage\": 1,\n            \"code\": \"prueba1\",\n  \t\t\t\"institution\": \"Editado1\",\n            \"description\": \"FIELD DE Editado\",\n            \"IsDuplex\": 1,\n            \"MultiPages\": 1,\n            \"VariablesPages\": 1,\n            \"NumberPages\": 1,\n            \"isActive\": true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 1,\n            \"creationOfficeId\": 1,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 1,\n            \"updateOfficeId\": 1\n            \n        }"
+						},
+						"url": {
+							"raw": "http://localhost:5008/TypeImage/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5008",
+							"path": [
+								"TypeImage",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forms",
+			"item": [
+				{
+					"name": "AddForm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n            \"code\": \"SOLCREDI\",\n            \"institution\": \"BDA\",\n            \"description\": \"SOLICITUD DE CREDITO\",\n            \"prefijo\": \"SOLC\",\n            \"isDigitizable\": false,\n            \"IsCentrilizedOnline\":1,\n            \"idTypeImage\": 0,\n            \"type\": \"PDF\",\n            \"path\": \"\",\n            \"blodStorage\": \"FILESYSTEM\", \n            \"profile\": \"NULL\",\n            \"timeLive\": 12,\n            \"isVirtual\": false,\n            \"isActive\": true,\n            \"isForm\":false,\n            \"isScanLote\":false,\n            \"orientation\":\"vertical\",\n            \"valuedDocument\":false,\n            \"copyNumber\":1,\n            \"Reprintable\":true,\n            \"creationDate\": \"2019-11-06T14:53:53.887\",\n            \"creationUserId\": 2,\n            \"creationOfficeId\": 2,\n            \"updateDate\": \"2019-11-06T14:53:53.887\",\n            \"updateUserId\": 2,\n            \"updateOfficeId\": 2,\n            \"formVersion\": [\n                {\n                    \"isWaterMarked\": true,\n                    \"template\": \"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\",\n                    \"isActive\": true,\n                    \"startValidityDate\": 1577768400,\n                    \"creationDate\": null,\n                    \"creationUserId\": null,\n                    \"creationOfficeId\": null,\n                    \"updateDate\": null,\n                    \"updateUserId\": null,\n                    \"updateOfficeId\": null,\n                    \"code\": \"ABCDEL\",\n                    \"description\": \"DESCRIPCION\",\n                    \"institution\": \"BDA\",\n                    \"endValidityDate\": 1577941200,\n                    \"idWaterMarkNavigation\": null\n                }\n            ],\n            \"TypeDctoField\":[\n            \t{\"IdTypeDctoField\":0,\"IdField\":1,\"IdTypeDocument\":0,\"IsActive\":1,\"IsObligatory\":1,\"CodeField\":\"DNI\",\"Order\":2},\n            \t{\"IdTypeDctoField\":0,\"IdField\":2,\"IdTypeDocument\":0,\"IsActive\":1,\"IsObligatory\":1,\"CodeField\":\"SOLCRE\",\"Order\":2}\n            \t]\n           \n        }"
+						},
+						"url": {
+							"raw": "http://localhost:5020/TypeDocument/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5020",
+							"path": [
+								"TypeDocument",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

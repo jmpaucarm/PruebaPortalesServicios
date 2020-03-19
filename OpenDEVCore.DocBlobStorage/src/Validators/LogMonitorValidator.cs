@@ -1,0 +1,7 @@
+﻿
+
+
+namespace OpenDEVCore.DocBlobStorage.Validators
+{
+   
+}

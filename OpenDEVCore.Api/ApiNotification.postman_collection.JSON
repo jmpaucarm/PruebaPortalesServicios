@@ -1,0 +1,470 @@
+{
+	"id": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+	"name": "ApiNotification",
+	"description": "",
+	"order": [
+		"e066158c-81b7-1da3-1a59-4724250de1da",
+		"1911e217-eab1-f721-07b8-9d1e9d8360c9",
+		"92cc7c05-d57a-e303-70e5-b83226fe6129",
+		"c66d0d1a-2a50-9af1-e22f-6451f7d1655f",
+		"39f57d9e-d28a-ec78-9f58-096eaaf2c7cc",
+		"fa4cd15d-0582-a9dd-4053-1c15fdfebefa",
+		"f8e85d89-5d70-068b-b9cc-d6bc0d3166ef",
+		"914b8bef-ce44-0dae-abaf-745a39309a51",
+		"5153d13a-bbc8-fe56-ccdd-725aaece1d04",
+		"aeddf935-3fc3-9700-c199-64e8b61240a2",
+		"30f5f41a-b0d4-007a-14ef-712a073202bc",
+		"494e6744-aa42-8f66-2af9-94a9114d1152",
+		"cf33ba75-f600-a939-cb81-e74e124685c4"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1575564881217,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "1911e217-eab1-f721-07b8-9d1e9d8360c9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/getproviderbycode?Code=CLARO&Chanel=SMS&Institution=BANCO ANTIGUA",
+			"queryParams": [
+				{
+					"key": "Code",
+					"value": "CLARO",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Chanel",
+					"value": "SMS",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Institution",
+					"value": "BANCO ANTIGUA",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/getproviderbycode?Code=CLARO&Chanel=SMS&Institution=BANCO ANTIGUA",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575565185044,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "30f5f41a-b0d4-007a-14ef-712a073202bc",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5001/Notification/addtemplate",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5001/Notification/addtemplate",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575575060472,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\n\t\t\"Code\": \"CLARO1\",\n\t\t\"Institution\": \"BANCO DE ANTIGUA2\",\n\t\t\"Chanel\": \"SMS\",\n\t\t\"Description\": \"PRUEBA BANCO ANTIGUA\",\n\t\t\"Title\": \"BANCOANTIGUA\",\n\t\t\"From\": \"PORTALES\",\n\t\t\"IsActive\": 1,\n\t\t\"TemplateFormat\":[\n\t\t\t{\"Template\": \"UEsDBBQABgAIAAAAIQDfpNJsWgEAACAFAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC0lMtuwjAQRfeV\",\n\t\t\t\"DateIni\":\"2019-12-05\"\t}\n\t\t\t]\n\t\n}"
+		},
+		{
+			"id": "39f57d9e-d28a-ec78-9f58-096eaaf2c7cc",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5001/Notification/addprovider",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5001/Notification/addprovider",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575566443023,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n \t\"Institution\": \"BANCO ANTIGUA PRUEBA API\",\n    \"Chanel\": \"SMS\",\n    \"Code\": \"MOVICLARO\",\n    \"NameAppMobil\": \"SMS\",\n    \"Key1\": \"AAX\",\n    \"Key2\": \"BBX\",\n    \"Key3\": \"CCZ\",\n    \"IsActive\": 1\n}"
+		},
+		{
+			"id": "494e6744-aa42-8f66-2af9-94a9114d1152",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5001/Notification/edittemplate",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5001/Notification/edittemplate",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575576127666,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"IdTemplate\": \"20\",\n\t\t\"Code\": \"CLAROPORTALES\",\n\t\t\"Institution\": \"BANCO DE ANTIGUA\",\n\t\t\"Chanel\": \"SMS\",\n\t\t\"Description\": \"PRUEBA BANCO ANTIGUA\",\n\t\t\"Title\": \"BANCOANTIGUA\",\n\t\t\"From\": \"PORTALES\",\n\t\t\"IsActive\": 1,\n\t\t\"TemplateFormat\":[\n\t\t\t{\"Template\": \"UEsDBBQABgAIAAAAIQDfpNJsWgEAACAFAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC0lMtuwjAQRfeV\",\n\t\t\t\"DateIni\":\"2019-12-06\"\t}\n\t\t\t]\n\t\n}"
+		},
+		{
+			"id": "5153d13a-bbc8-fe56-ccdd-725aaece1d04",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/gettemplatebycode?Code=CLARO&Chanel=SMS&Institution=BANCO DE ANTIGUA",
+			"queryParams": [
+				{
+					"key": "Code",
+					"value": "CLARO",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Chanel",
+					"value": "SMS",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Institution",
+					"value": "BANCO DE ANTIGUA",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/gettemplatebycode?Code=CLARO&Chanel=SMS&Institution=BANCO DE ANTIGUA",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575573599661,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "914b8bef-ce44-0dae-abaf-745a39309a51",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/findtemplate?code=CLARO&chanel=SMS&institution=BANCO DE ANTIGUA",
+			"queryParams": [
+				{
+					"key": "code",
+					"value": "CLARO",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "chanel",
+					"value": "SMS",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "institution",
+					"value": "BANCO DE ANTIGUA",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/findtemplate?code=CLARO&chanel=SMS&institution=BANCO DE ANTIGUA",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575573195265,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "92cc7c05-d57a-e303-70e5-b83226fe6129",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/findprovider?Code=CLARO&Chanel=SMS&Institution=BANCO ANTIGUA",
+			"queryParams": [
+				{
+					"key": "Code",
+					"value": "CLARO",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Chanel",
+					"value": "SMS",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Institution",
+					"value": "BANCO ANTIGUA",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/findprovider?Code=CLARO&Chanel=SMS&Institution=BANCO ANTIGUA",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575565326924,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "aeddf935-3fc3-9700-c199-64e8b61240a2",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/gettemplatebyid?id=18",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "18",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/gettemplatebyid?id=18",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575573820039,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "c66d0d1a-2a50-9af1-e22f-6451f7d1655f",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/getproviderbyid?Id=3",
+			"queryParams": [
+				{
+					"key": "Id",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/getproviderbyid?Id=3",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575565418545,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "cf33ba75-f600-a939-cb81-e74e124685c4",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5001/Notification/addcampaign",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5001/Notification/addcampaign",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575577996732,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"Code\": \"CLAROCampaingn\",\n\t\"Institution\": \"BANCO ANTIGUA\",\n\t\"Channel\": \"SMS\",\n\t\"Description\":\"SMS - PRUEBA\",\n\t\"IsOnLine\": 1,\n\t\"IdFileHeader\":1,\n\t\"NameFile\":\"PORTALES PRUEBA\",\n\t\"Frequency\":\"Portales\",\n\t\"IsActive\":1,\n\t\"CampaignData\":[\n\t\t{\n\t\t\t\"Receptor\":\"AAA\",\n\t\t\t\"Platform\":\"BBB\",\n\t\t\t\"Data\":\"CCC\",\n\t\t\t\"IsSend\":1\n\t\t\t\n\t\t}\n\t\t\n\t\t]\n\t\n\t\n}"
+		},
+		{
+			"id": "e066158c-81b7-1da3-1a59-4724250de1da",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/getallproviders",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/getallproviders",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575564894470,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f8e85d89-5d70-068b-b9cc-d6bc0d3166ef",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5001/Notification/getalltemplate",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5001/Notification/getalltemplate",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575569405882,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "fa4cd15d-0582-a9dd-4053-1c15fdfebefa",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5001/Notification/editprovider",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0fc6d782-b531-dfa2-210b-0b78eff9e613",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5001/Notification/editprovider",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1575566589238,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{   \n\t\"IdProvider\": 3,\n \t\"Institution\": \"BANCO ANTIGUA\",\n    \"Chanel\": \"SMS\",\n    \"Code\": \"CLARO\",\n    \"NameAppMobil\": \"SMS\",\n    \"Key1\": \"ABC\",\n    \"Key2\": \"XYZ\",\n    \"Key3\": \"MNO\",\n    \"IsActive\": 0\n\n}"
+		}
+	]
+}

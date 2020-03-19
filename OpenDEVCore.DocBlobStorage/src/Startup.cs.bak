@@ -1,0 +1,140 @@
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using Consul;
+using Core;
+using Core.Consul;
+using Core.Data;
+using Core.Dispatchers;
+using Core.Mvc;
+using Core.RabbitMq;
+using Core.Redis;
+using Core.RestEase;
+using Core.Swagger;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using OpenDEVCore.DocBlobStorage.Dto;
+using OpenDEVCore.DocBlobStorage.Helpers;
+using OpenDEVCore.DocBlobStorage.Proxy;
+using OpenDEVCore.DocBlobStorage.Repositories;
+using OpenDEVCore.DocBlobStorage.Validators;
+using System;
+using System.Linq;
+using System.Reflection;
+
+namespace OpenDEVCore.DocBlobStorage
+{
+    public class Startup
+    {
+        public IConfiguration Configuration { get; }
+        public IContainer Container { get; private set; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IServiceProvider ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<AppLogContext>(item => item.UseSqlServer
+                                 (Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ILogMonitorRepository, LogMonitorRepository>();
+
+            services.AddAutoMapper(typeof(Startup));
+            services.RegisterServiceForwarder<IConfigurationService>("configuration-service");
+            services.RegisterServiceForwarder<ISecurityService>("security-service");
+            services.RegisterServiceForwarder<IWSO2Service>("wso2-integration");
+
+
+            services.AddSingleton<IValidator<LogMonitorDto>, LogMonitorValidator>();
+
+            /*Excepciones
+            services.AddSingleton<IExHandler, ExHandler>();
+            */
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddFluentValidation();
+
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = (context) =>
+                {
+                    var errors = context.ModelState.Values.SelectMany(x => x.Errors.Select(p => p.ErrorMessage)).ToList();
+                    var result = new
+                    {
+                        Code = ExMessages.EntityValidationError.code,
+                        Message = ExMessages.EntityValidationError.message,
+                        Errors = errors
+                    };
+                    return new BadRequestObjectResult(result);
+                };
+            });
+
+            services.AddCustomMvc();
+            services.AddSwaggerDocs();
+            
+            services.AddConsul();
+            services.AddRedis();
+
+            services.AddMemoryCache();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", cors =>
+                        cors.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials());
+            });
+
+            services.AddSqlClient();
+
+            var builder = new ContainerBuilder();
+            builder.RegisterAssemblyTypes(Assembly.GetEntryAssembly())
+                .AsImplementedInterfaces();
+            builder.Populate(services);
+            builder.AddRabbitMq();
+            builder.AddDispatchers();
+
+            Container = builder.Build();
+
+            return new AutofacServiceProvider(Container);
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,
+            IApplicationLifetime applicationLifetime, IConsulClient client,
+            IStartupInitializer startupInitializer)
+        {
+            if (env.IsDevelopment() || env.EnvironmentName == "local")
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseCors("CorsPolicy");
+            app.UseAllForwardedHeaders();
+            app.UseSwaggerDocs();
+            app.UseSessionHandlerMiddleware();
+            app.UseErrorHandler();
+            app.UseBaseResponseMiddleware();
+            app.UseServiceId();
+            app.UseMvc();
+            app.UseRabbitMq();
+               
+            var consulServiceId = app.UseConsul();
+            applicationLifetime.ApplicationStopped.Register(() =>
+            {
+                client.Agent.ServiceDeregister(consulServiceId);
+                Container.Dispose();
+            });
+
+            startupInitializer.InitializeAsync();
+        }
+    }
+}
